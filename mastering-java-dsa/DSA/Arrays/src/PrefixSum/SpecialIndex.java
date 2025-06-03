@@ -3,7 +3,8 @@ package PrefixSum;
 public class SpecialIndex {
     /* PYQ
     Google's Favourite
-    Given an array A[] of size N. Find count of array indices such that removing an element from the array makes the sum of even and odd indexed elements equal.
+    Given an array A[] of size N. Find count of array indices such that removing an element from
+    the array makes the sum of even and odd indexed elements equal.
 
      -> for each element check if sum is equal. After removing an element ith
      S_odd = S_odd(0 - i-1) + S_even(i+1 - n-1);
@@ -50,3 +51,24 @@ public class SpecialIndex {
         return arr[e] - arr[s-1];
     }
 }
+/*
+        for(int i = 0; i < n; i++){
+            int So = 0, Se = 0;
+            if(i == 0){
+                So = query(peven, i+1, n-1);
+                Se = query(podd, i+1, n-1);
+            }
+            else if(i == n-1){
+                So = query(podd, 0, i-1);
+                Se = query(peven, 0, i-1);
+            }
+            else{
+            So = query(podd, 0, i-1) + query(peven, i+1, n-1);
+            Se = query(peven, 0, i-1) + query(podd, i+1, n-1);
+            }
+
+
+            if(So == Se) count++;
+        }
+
+ */
